@@ -31,7 +31,7 @@ public class ClaimsServiceApplication implements CommandLineRunner {
                 new Claim("5", "Accupril", "00710530", "Branded", "KING", "CVS", LocalDate.now(), 22.15, "5")));
 
 
-        claimList.forEach(e -> claimsService.deleteClaimById(e.getClaimId()));
+        claimList.forEach(e -> claimsService.deleteByMemberId(e.getMemberId()));
         claimList.forEach(e -> claimsService.saveClaim(e));
     }
 }
