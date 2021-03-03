@@ -17,11 +17,10 @@ public class ClaimsService {
         return claimRepository.findByMemberId(memberId);
     }
 
-    public void deleteClaimById(String claimId) {
-        boolean flag = claimRepository.deleteByClaimId(claimId);
-        System.out.println("Claim id : " + flag);
-    }
 
+    public void deleteByMemberId(String memberId) {
+        claimRepository.deleteByMemberId(memberId);
+    }
 
     public void saveClaim(Claim claim) {
         claimRepository.save(claim);
