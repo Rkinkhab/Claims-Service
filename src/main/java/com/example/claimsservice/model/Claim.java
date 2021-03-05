@@ -22,11 +22,11 @@ public class Claim {
     private String drugType;
     private String prescriberName;
     private String pharmacyName;
-    private LocalDate createdDate;
+    private String createdDate;
     private double claimAmount;
     private String memberId;
 
-    public Claim(String claimId, String drugName, String drugNDC, String drugType, String prescriberName, String pharmacyName, LocalDate createdDate, double claimAmount, String memberId) {
+    public Claim(String claimId, String drugName, String drugNDC, String drugType, String prescriberName, String pharmacyName, String createdDate, double claimAmount, String memberId) {
         this.claimId = claimId;
         this.drugName = drugName;
         this.drugNDC = drugNDC;

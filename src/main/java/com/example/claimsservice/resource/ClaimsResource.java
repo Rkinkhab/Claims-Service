@@ -14,12 +14,10 @@ public class ClaimsResource {
     private ClaimsService claimsService;
 
     @GetMapping("/claim/{memberId}")
-    public ResponseEntity<?> getClaims(@PathVariable final String memberId) {
+    public ResponseEntity<Claim> getClaims(@PathVariable final String memberId) {
 
         Claim claim = claimsService.retrieveClaim(memberId);
 
-        if (null == claim)
-            return ResponseEntity.badRequest().body("Couldn't find any claims for given member");
         return ResponseEntity.ok().body(claim);
     }
 
@@ -28,6 +26,6 @@ public class ClaimsResource {
 
         claimsService.saveClaim(claim);
 
-        return ResponseEntity.ok().body("Claim saved successfully.");
+        return ResponseEntity.ok().body(claim);
     }
 }
